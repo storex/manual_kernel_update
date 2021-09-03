@@ -41,7 +41,6 @@ vagrant        ALL=(ALL)       NOPASSWD: ALL
 EOF_sudoers_vagrant
 
 /bin/chmod 0440 /etc/sudoers.d/vagrant
-/bin/sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 
 # Fix sshd config for CentOS 7 1611 (reboot issue)
 cat << EOF_sshd_config >> /etc/ssh/sshd_config
@@ -56,5 +55,4 @@ GSSAPIAuthentication no
 ChallengeResponseAuthentication no
 
 EOF_sshd_config
-
 %end
